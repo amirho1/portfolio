@@ -1,38 +1,17 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Github, Linkedin, Twitter, Instagram, ExternalLink, Mail, Phone } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Mail, Phone } from "lucide-react";
+import Nav from "@/components/Nav";
+import Socials from "@/components/Socials";
 
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
-        <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold">
-            Personal
-          </Link>
-
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="#about" className="text-gray-600 hover:text-black transition-colors">
-              About Me
-            </Link>
-            <Link href="#skills" className="text-gray-600 hover:text-black transition-colors">
-              Skills
-            </Link>
-            <Link href="#projects" className="text-gray-600 hover:text-black transition-colors">
-              Project
-            </Link>
-            <Link href="#contact" className="text-gray-600 hover:text-black transition-colors">
-              Contact Me
-            </Link>
-          </div>
-
-          <Button className="bg-black text-white hover:bg-gray-800">Resume</Button>
-        </nav>
-      </header>
+      <Nav />
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 md:py-20">
@@ -40,32 +19,23 @@ export default function Portfolio() {
           <div className="space-y-6">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Hello I am <span className="block">Evren Shah.</span>
-                <span className="block">Frontend Developer</span>
-                <span className="block">Based In India.</span>
+                <span className="font-normal">Hello I am</span>{" "}
+                <span className="block font-bold underline">Amir Hossein Salighedar.</span>
+                <span className="block font-normal">Frontend Developer</span>
+                <span className="block font-normal">Based In Iran.</span>
               </h1>
               <p className="text-gray-600 text-lg max-w-md">
-                I'm Evren Shah, a passionate Frontend Developer with a strong background in programming and
-                problem-solving. I have experience in various technologies and frameworks, and I'm always eager to learn
-                and grow. I'm passionate about creating efficient and user-friendly applications that solve real-world
-                problems.
+                I'm passionate web developer with 4 years of experience who is into learning and
+                enjoying to share my knowledge, I"m master of Javascript and typescript. Experienced
+                working with multiple frameworks such as{" "}
+                <Link href="https://nextjs.org/" target="_blank" className="underline">
+                  Next.js
+                </Link>{" "}
+                Nest.js also have deep knowledge of underlining of javascript engine.
               </p>
             </div>
 
-            <div className="flex space-x-4">
-              <Link href="#" className="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                <Github className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                <Instagram className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                <Twitter className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </Link>
-            </div>
+            <Socials />
           </div>
 
           <div className="flex justify-center">
@@ -100,10 +70,19 @@ export default function Portfolio() {
             { name: "Socket.io", icon: "🔌" },
             { name: "Sass/Scss", icon: "💄" },
           ].map((skill, index) => (
-            <Card key={index} className={`p-6 text-center hover:shadow-lg transition-shadow ${skill.bg || "bg-white"}`}>
+            <Card
+              key={index}
+              className={`p-6 text-center hover:shadow-lg transition-shadow ${
+                skill.bg || "bg-white"
+              }`}
+            >
               <CardContent className="p-0">
-                <div className={`text-2xl mb-2 ${skill.bg ? "text-white" : "text-black"}`}>{skill.icon}</div>
-                <p className={`font-medium ${skill.bg ? "text-white" : "text-black"}`}>{skill.name}</p>
+                <div className={`text-2xl mb-2 ${skill.bg ? "text-white" : "text-black"}`}>
+                  {skill.icon}
+                </div>
+                <p className={`font-medium ${skill.bg ? "text-white" : "text-black"}`}>
+                  {skill.name}
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -171,20 +150,21 @@ export default function Portfolio() {
             <h2 className="text-3xl md:text-4xl font-bold">About Me</h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                I'm a passionate and experienced software engineer specializing in full-stack web development. With over
-                8 years of experience in the industry, I have honed my technical and social aspects of digital products
-                in my field. I have expertise in various programming languages and frameworks.
+                I'm a passionate and experienced software engineer specializing in full-stack web
+                development. With over 8 years of experience in the industry, I have honed my
+                technical and social aspects of digital products in my field. I have expertise in
+                various programming languages and frameworks.
               </p>
               <p>
-                I began my journey as a web developer in 2015, and since then, I've contributed to open-source projects
-                and worked on various projects ranging from small business websites to large-scale enterprise
-                applications. My passion lies in creating efficient and user-friendly applications that solve real-world
-                problems.
+                I began my journey as a web developer in 2015, and since then, I've contributed to
+                open-source projects and worked on various projects ranging from small business
+                websites to large-scale enterprise applications. My passion lies in creating
+                efficient and user-friendly applications that solve real-world problems.
               </p>
               <p>
-                When I'm not coding, you can find me exploring new technologies, reading tech blogs, or contributing to
-                open-source projects. I'm always eager to learn and grow, and I believe in the power of collaboration
-                and continuous learning.
+                When I'm not coding, you can find me exploring new technologies, reading tech blogs,
+                or contributing to open-source projects. I'm always eager to learn and grow, and I
+                believe in the power of collaboration and continuous learning.
               </p>
             </div>
           </div>
@@ -222,13 +202,18 @@ export default function Portfolio() {
             ].map((project, index) => (
               <div
                 key={index}
-                className={`grid md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? "md:grid-flow-col-dense" : ""}`}
+                className={`grid md:grid-cols-2 gap-8 items-center ${
+                  index % 2 === 1 ? "md:grid-flow-col-dense" : ""
+                }`}
               >
                 <div className={`space-y-4 ${index % 2 === 1 ? "md:col-start-2" : ""}`}>
                   <div className="text-6xl font-bold text-gray-800">{project.number}</div>
                   <h3 className="text-2xl font-bold">{project.title}</h3>
                   <p className="text-gray-300 leading-relaxed">{project.description}</p>
-                  <Button variant="outline" className="text-white border-white hover:bg-white hover:text-black">
+                  <Button
+                    variant="outline"
+                    className="text-white border-white hover:bg-white hover:text-black"
+                  >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     View Project
                   </Button>
@@ -253,8 +238,8 @@ export default function Portfolio() {
         <div className="text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold">Get In Touch</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities and interesting projects. Feel free to reach out if you'd
-            like to collaborate or just say hello!
+            I'm always open to discussing new opportunities and interesting projects. Feel free to
+            reach out if you'd like to collaborate or just say hello!
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -277,5 +262,5 @@ export default function Portfolio() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
