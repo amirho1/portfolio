@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Mail, Phone } from "lucide-react";
+import { ExternalLink, Mail } from "lucide-react";
 import Nav from "@/components/Nav";
 import Socials from "@/components/Socials";
+import Skills from "@/components/Skills";
 
 export default function Portfolio() {
   return (
@@ -41,7 +41,7 @@ export default function Portfolio() {
           <div className="flex justify-center">
             <div className="relative">
               <Image
-                src="/placeholder.svg?height=400&width=400"
+                src="/Portfolio_pic.jpg?height=400&width=400"
                 alt="Evren Shah - Frontend Developer"
                 width={400}
                 height={400}
@@ -57,36 +57,7 @@ export default function Portfolio() {
       <section id="skills" className="container mx-auto px-4 py-16">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">My Skills</h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-          {[
-            { name: "Git", icon: "🔧" },
-            { name: "JavaScript", icon: "JS", bg: "bg-black text-white" },
-            { name: "Sass/Scss", icon: "💄" },
-            { name: "Next.js", icon: "▲" },
-            { name: "Storybook", icon: "📚" },
-            { name: "Node.js", icon: "🟢" },
-            { name: "Git", icon: "🔧" },
-            { name: "Storybook", icon: "📚" },
-            { name: "Socket.io", icon: "🔌" },
-            { name: "Sass/Scss", icon: "💄" },
-          ].map((skill, index) => (
-            <Card
-              key={index}
-              className={`p-6 text-center hover:shadow-lg transition-shadow ${
-                skill.bg || "bg-white"
-              }`}
-            >
-              <CardContent className="p-0">
-                <div className={`text-2xl mb-2 ${skill.bg ? "text-white" : "text-black"}`}>
-                  {skill.icon}
-                </div>
-                <p className={`font-medium ${skill.bg ? "text-white" : "text-black"}`}>
-                  {skill.name}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <Skills />
       </section>
 
       {/* Experience Section */}
@@ -245,11 +216,7 @@ export default function Portfolio() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button className="bg-black text-white hover:bg-gray-800">
               <Mail className="w-4 h-4 mr-2" />
-              evren.shah@email.com
-            </Button>
-            <Button variant="outline">
-              <Phone className="w-4 h-4 mr-2" />
-              +91 12345 67890
+              amirhosseinsalighedar@gmail.com
             </Button>
           </div>
         </div>
