@@ -6,6 +6,7 @@ import { ExternalLink, Mail } from "lucide-react";
 import Nav from "@/components/Nav";
 import Socials from "@/components/Socials";
 import Skills from "@/components/Skills";
+import Experiences from "@/components/Experiences";
 
 export default function Portfolio() {
   return (
@@ -61,48 +62,7 @@ export default function Portfolio() {
       </section>
 
       {/* Experience Section */}
-      <section className="bg-black text-white py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">My Experience</h2>
-
-          <div className="space-y-8">
-            {[
-              {
-                company: "Google",
-                role: "Lead Software Engineer at Google",
-                period: "Nov 2019 - Present",
-                description:
-                  "As a senior software engineer at Google, I played a key role in developing innovative solutions for Google's search algorithms. I collaborated with cross-functional teams to enhance user experience and optimize search performance, contributing to the advancement of search technology and delivering exceptional user experiences for millions of users worldwide.",
-              },
-              {
-                company: "YouTube",
-                role: "Software Engineer at YouTube",
-                period: "Jan 2017 - Oct 2019",
-                description:
-                  "At YouTube, I served as a Software Engineer, focusing on the design and implementation of backend systems for the world's most popular video-sharing platform. I worked on optimizing video streaming algorithms and improving user engagement through data-driven insights and innovative feature development.",
-              },
-              {
-                company: "Apple",
-                role: "Junior Software Engineer at Apple",
-                period: "Jun 2015 - Dec 2017",
-                description:
-                  "During my tenure at Apple, I held the role of Software Engineer, where I played a key role in developing iOS applications and contributing to the enhancement of user experiences across Apple's ecosystem. I collaborated with multidisciplinary teams to deliver high-quality software solutions and ensure seamless integration with Apple's hardware and software ecosystem.",
-              },
-            ].map((exp, index) => (
-              <div key={index} className="border-l-2 border-gray-700 pl-6 pb-8">
-                <div className="flex items-center space-x-3 mb-2">
-                  <div className="w-3 h-3 bg-white rounded-full -ml-8"></div>
-                  <Badge variant="outline" className="text-white border-white">
-                    {exp.period}
-                  </Badge>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{exp.role}</h3>
-                <p className="text-gray-300 leading-relaxed">{exp.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Experiences />
 
       {/* About Me Section */}
       <section id="about" className="container mx-auto px-4 py-16">
