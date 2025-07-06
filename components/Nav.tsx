@@ -34,7 +34,7 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold">
+        <Link href="/" className="text-xl font-bold cursor-pointer">
           Amirho
         </Link>
 
