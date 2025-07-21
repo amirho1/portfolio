@@ -8,34 +8,60 @@ export default function Skills() {
       {[
         {
           name: "JavaScript",
-          icon: <Image width={50} height={50} src="/javaScript.png" alt="Javascript logo" />,
+          icon: (
+            <Image
+              loading="lazy"
+              width={50}
+              height={50}
+              src="/javaScript.png"
+              alt="Javascript logo"
+            />
+          ),
         },
         {
           name: "Typescript",
-          icon: <Image width={50} height={50} src="/ts.svg" alt="Typescript logo" />,
+          icon: <Image loading="lazy" width={50} height={50} src="/ts.svg" alt="Typescript logo" />,
         },
-        { name: "Git", icon: <Image width={50} height={50} src="/git.png" alt="git logo" /> },
+        {
+          name: "Git",
+          icon: <Image loading="lazy" width={50} height={50} src="/git.png" alt="git logo" />,
+        },
         {
           name: "Sass/Scss",
-          icon: <Image width={50} height={50} src="/sass.png" alt="sass logo" />,
+          icon: <Image loading="lazy" width={50} height={50} src="/sass.png" alt="sass logo" />,
         },
         { name: "Next.js", icon: "▲" },
         {
           name: "Node.js",
-          icon: <Image width={50} height={50} src="/nodejs.svg" alt="node.js logo" />,
+          icon: (
+            <Image loading="lazy" width={50} height={50} src="/nodejs.svg" alt="node.js logo" />
+          ),
         },
-        { name: "React", icon: <Image width={50} height={50} src="/react.svg" alt="react logo" /> },
+        {
+          name: "React",
+          icon: <Image loading="lazy" width={50} height={50} src="/react.svg" alt="react logo" />,
+        },
         {
           name: "Nestjs",
-          icon: <Image width={50} height={50} src="/nestjs.svg" alt="nestjs logo" />,
+          icon: <Image loading="lazy" width={50} height={50} src="/nestjs.svg" alt="nestjs logo" />,
         },
         {
           name: "Tailwindcss",
-          icon: <Image width={50} height={50} src="/tailwindcss.svg" alt="Tailwindcss logo" />,
+          icon: (
+            <Image
+              loading="lazy"
+              width={50}
+              height={50}
+              src="/tailwindcss.svg"
+              alt="Tailwindcss logo"
+            />
+          ),
         },
         {
           name: "MUI",
-          icon: <Image width={50} height={50} src="/mui.svg" alt="Material UI logo" />,
+          icon: (
+            <Image loading="lazy" width={50} height={50} src="/mui.svg" alt="Material UI logo" />
+          ),
         },
       ].map((skill, index) => (
         <Card
