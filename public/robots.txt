@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://amirho.site
+
+# Sitemaps
+Sitemap: https://amirho.site/sitemap.xml
