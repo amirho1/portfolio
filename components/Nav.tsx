@@ -11,10 +11,10 @@ export default function Nav() {
       name: "Skills",
       href: "#skills",
     },
-    {
-      name: "Project",
-      href: "#projects",
-    },
+    // {
+    //   name: "Project",
+    //   href: "#projects",
+    // },
     {
       name: "Contact Me",
       href: "#contact",

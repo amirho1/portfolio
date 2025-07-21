@@ -7,6 +7,8 @@ import Nav from "@/components/Nav";
 import Socials from "@/components/Socials";
 import Skills from "@/components/Skills";
 import Experiences from "@/components/Experiences";
+import HeroSection from "@/components/HeroSection";
+import Footer from "@/components/Footer";
 
 export default function Portfolio() {
   return (
@@ -15,95 +17,18 @@ export default function Portfolio() {
       <Nav />
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12 md:py-20">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                <span className="font-normal">Hello I am</span>{" "}
-                <span className="block font-bold underline">Amir Hossein Salighedar.</span>
-                <span className="block font-normal">Frontend Developer</span>
-                <span className="block font-normal">Based In Iran.</span>
-              </h1>
-              <p className="text-gray-600 text-lg max-w-md">
-                I'm passionate web developer with 4 years of experience who is into learning and
-                enjoying to share my knowledge, I"m master of Javascript and typescript. Experienced
-                working with multiple frameworks such as{" "}
-                <Link href="https://nextjs.org/" target="_blank" className="underline">
-                  Next.js
-                </Link>{" "}
-                Nest.js also have deep knowledge of underlining of javascript engine.
-              </p>
-            </div>
-
-            <Socials />
-          </div>
-
-          <div className="flex justify-center">
-            <div className="relative">
-              <Image
-                src="/Portfolio_pic.jpg?height=400&width=400"
-                alt="Evren Shah - Frontend Developer"
-                width={400}
-                height={400}
-                className="rounded-lg"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <HeroSection />
       {/* Skills Section */}
       <section id="skills" className="container mx-auto px-4 py-16">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">My Skills</h2>
-
         <Skills />
       </section>
 
       {/* Experience Section */}
       <Experiences />
 
-      {/* About Me Section */}
-      <section id="about" className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center">
-            <Image
-              src="/placeholder.svg?height=400&width=300"
-              alt="About Evren Shah"
-              width={300}
-              height={400}
-              className="rounded-lg"
-            />
-          </div>
-
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">About Me</h2>
-            <div className="space-y-4 text-gray-600 leading-relaxed">
-              <p>
-                I'm a passionate and experienced software engineer specializing in full-stack web
-                development. With over 8 years of experience in the industry, I have honed my
-                technical and social aspects of digital products in my field. I have expertise in
-                various programming languages and frameworks.
-              </p>
-              <p>
-                I began my journey as a web developer in 2015, and since then, I've contributed to
-                open-source projects and worked on various projects ranging from small business
-                websites to large-scale enterprise applications. My passion lies in creating
-                efficient and user-friendly applications that solve real-world problems.
-              </p>
-              <p>
-                When I'm not coding, you can find me exploring new technologies, reading tech blogs,
-                or contributing to open-source projects. I'm always eager to learn and grow, and I
-                believe in the power of collaboration and continuous learning.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Projects Section */}
-      <section id="projects" className="bg-black text-white py-16">
+      {/* <section id="projects" className=" py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">My Projects</h2>
 
@@ -113,21 +38,21 @@ export default function Portfolio() {
                 number: "01",
                 title: "Crypto Screener Application",
                 description:
-                  "I'm Evren Shah, a passionate Frontend Developer with a strong background in programming and problem-solving. I have experience in various technologies and frameworks, and I'm always eager to learn and grow.",
+                  "I'm Amirhossein Salighedar, a passionate Frontend Developer with a strong background in programming and problem-solving. I have experience in various technologies and frameworks, and I'm always eager to learn and grow.",
                 image: "/placeholder.svg?height=300&width=400",
               },
               {
                 number: "02",
                 title: "Euphoria - Ecommerce (Apparels) Website Template",
                 description:
-                  "I'm Evren Shah, a passionate Frontend Developer with a strong background in programming and problem-solving. I have experience in various technologies and frameworks, and I'm always eager to learn and grow.",
+                  "I'm Amirhossein Salighedar, a passionate Frontend Developer with a strong background in programming and problem-solving. I have experience in various technologies and frameworks, and I'm always eager to learn and grow.",
                 image: "/placeholder.svg?height=300&width=400",
               },
               {
                 number: "03",
                 title: "Blog Website Template",
                 description:
-                  "I'm Evren Shah, a passionate Frontend Developer with a strong background in programming and problem-solving. I have experience in various technologies and frameworks, and I'm always eager to learn and grow.",
+                  "I'm Amirhossein Salighedar, a passionate Frontend Developer with a strong background in programming and problem-solving. I have experience in various technologies and frameworks, and I'm always eager to learn and grow.",
                 image: "/placeholder.svg?height=300&width=400",
               },
             ].map((project, index) => (
@@ -162,7 +87,7 @@ export default function Portfolio() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
       <section id="contact" className="container mx-auto px-4 py-16">
@@ -174,20 +99,18 @@ export default function Portfolio() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button className="bg-black text-white hover:bg-gray-800">
-              <Mail className="w-4 h-4 mr-2" />
-              amirhosseinsalighedar@gmail.com
-            </Button>
+            <Link href="mailto:amirhosseinsalighedar@gmail.com">
+              <Button className="bg-black text-white hover:bg-gray-800">
+                <Mail className="w-4 h-4 mr-2" />
+                amirhosseinsalighedar@gmail.com
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-50 py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-600">© 2024 Evren Shah. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
