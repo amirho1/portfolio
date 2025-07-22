@@ -13,7 +13,7 @@ export default function Skills() {
               loading="lazy"
               width={50}
               height={50}
-              src="/javaScript.png"
+              src="/JavaScript.webp"
               alt="Javascript logo"
             />
           ),
@@ -24,7 +24,7 @@ export default function Skills() {
         },
         {
           name: "Git",
-          icon: <Image loading="lazy" width={50} height={50} src="/git.png" alt="git logo" />,
+          icon: <Image loading="lazy" width={50} height={50} src="/git.webp" alt="git logo" />,
         },
         {
           name: "Sass/Scss",
