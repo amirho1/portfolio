@@ -33,7 +33,7 @@ export default function HeroSection() {
           <div className="relative">
             <Image
               src="/Portfolio_pic.webp?height=400&width=400"
-              alt="Evren Shah - Frontend Developer"
+              alt="Amir Hossein Salighedar - Web Developer"
               width={400}
               height={400}
               className="rounded-lg"

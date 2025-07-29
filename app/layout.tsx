@@ -8,9 +8,14 @@ const author = "Amir Hossein Salighedar";
 const description = `I'm passionate web developer with 4 years of experience who is into learning and enjoying to share my knowledge, I"m master of Javascript and typescript. Experienced working with multiple frameworks such as Next.js Nest.js also have deep knowledge of underlining of javascript engine.`;
 
 export const metadata: Metadata = {
-  title: "Amir Hossein Salighedar - web Developer | Portfolio",
+  title:
+    "Amir Hossein Salighedar - web Developer | Portfolio |‌امیر حسین سلیقه دار - برنامه نویس وب ",
   description: description,
   keywords: [
+    "امیر حسین",
+    "سلیقه دار",
+    "امیر حسین سلیقه دار",
+    "برنامه نویس وب",
     "Frontend Developer",
     "React Developer",
     "Next.js",
@@ -33,7 +38,7 @@ export const metadata: Metadata = {
     "amirho",
   ],
   authors: [{ name: author }],
-  creator: "Evren Shah",
+  creator: "Amir Hossein Salighedar",
   openGraph: {
     type: "website",
     locale: "en_US",
