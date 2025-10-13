@@ -40,7 +40,7 @@ export default function Nav() {
 
         <div className="hidden md:flex items-center space-x-8">{elements}</div>
 
-        <Link href="/AmirHosseinSalighedarResume.pdf" download target="_blank">
+        <Link href="/AmirhosseinSalighedarResume.pdf" download target="_blank">
           <Button className="bg-black text-white hover:bg-gray-800">Resume</Button>
         </Link>
       </nav>
