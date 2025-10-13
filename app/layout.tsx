@@ -66,9 +66,40 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLD = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Amir Hossein",
+  lastname: "Salighedar",
+  jobTitle: "Full stack developer",
+  url: "https://amirho.site",
+  sameAs: [
+    "https://github.com/amirho1",
+    "https://linkedin.com/in/amirho",
+    "https://www.npmjs.com/~amirho",
+  ],
+  stack: [
+    "Javascript",
+    "Typescript",
+    "Nest.js",
+    "React",
+    "Next.js",
+    "AI Engineer",
+    "CSS",
+    "HTML 5",
+    "Postgres",
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLD).replace(/</g, "\\u003c"),
+        }}
+      />
       <body className={inter.className}>{children}</body>
     </html>
   );
