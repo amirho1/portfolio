@@ -6,10 +6,12 @@ export default function Nav() {
     {
       name: "About Me",
       href: "#about",
+      "aria-description": "Link to About me section"
     },
     {
       name: "Skills",
       href: "#skills",
+      "aria-description": "Link to Skills section"
     },
     // {
     //   name: "Project",
@@ -18,6 +20,8 @@ export default function Nav() {
     {
       name: "Contact Me",
       href: "#contact",
+      "aria-description": "Link to contact section"
+
     },
   ];
 
@@ -40,7 +44,12 @@ export default function Nav() {
 
         <div className="hidden md:flex items-center space-x-8">{elements}</div>
 
-        <Link href="/AmirhosseinSalighedarResume.pdf" download target="_blank">
+        <Link
+          href="/AmirHosseinSalighedarResume.pdf"
+          download
+          target="_blank"
+          aria-description="Amir Hossein salighedar PDF Resume"
+        >
           <Button className="bg-black text-white hover:bg-gray-800">Resume</Button>
         </Link>
       </nav>
