@@ -32,12 +32,11 @@ export default function HeroSection() {
         <div className="flex justify-center">
           <div className="relative">
             <Image
-              src="/Portfolio_pic.webp?height=400&width=400"
+              src="/Portfolio_pic.webp?height=640&width=480"
               alt="Amir Hossein Salighedar - Web Developer"
-              width={400}
-              height={400}
+              width={480}
+              height={640}
               className="rounded-lg"
-              loading="lazy"
             />
           </div>
         </div>
