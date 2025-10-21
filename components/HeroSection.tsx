@@ -37,6 +37,7 @@ export default function HeroSection() {
               width={480}
               height={640}
               className="rounded-lg"
+              priority={true}
             />
           </div>
         </div>
