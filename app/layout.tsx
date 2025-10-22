@@ -44,8 +44,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://amirho.site",
     title: `${author} - Frontend Developer`,
-    description: `I'm passionate web developer with 4 years of experience who is into learning and enjoying to share my knowledge, I"m master of Javascript and typescript. Experienced working with multiple frameworks such as Next.js Nest.js also have deep knowledge of underlining of javascript engine.`,
+    description: `I'm passionate web developer with 4 years of experience who is into learning and enjoying to share my knowledge, 
+    I"m master of Javascript and typescript. Experienced working with multiple frameworks
+    such as Next.js Nest.js also have deep knowledge of underlining of javascript engine.`,
     siteName: `${author} Portfolio`,
+    images: ["https://amirho.site/Portfolio_pic.webp?width=100&height=100"],
   },
   twitter: {
     card: "summary_large_image",
@@ -93,14 +96,17 @@ const jsonLD = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLD).replace(/</g, "\\u003c"),
-        }}
-      />
-      <body className={inter.className}>{children}</body>
+    <html lang="en">
+      <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLD).replace(/</g, "\\u003c"),
+          }}
+        />
+
+        {children}
+      </body>
     </html>
   );
 }
