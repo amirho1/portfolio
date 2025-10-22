@@ -120,20 +120,23 @@ export const skills = [
 
 export default function Skills() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-      {skills.map((skill, index) => (
-        <Card
-          key={index}
-          className={`p-6 text-center hover:shadow-lg transition-shadow "bg-white"`}
-        >
-          <CardContent className="p-0">
-            <div className={cn("text-2xl mb-2 flex justify-center items-center text-black")}>
-              {skill.icon}
-            </div>
-            <p className={`font-medium "text-black"`}>{skill.name}</p>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
+    <section id="skills" className="container mx-auto px-4 py-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">My Skills</h2>
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+        {skills.map((skill, index) => (
+          <Card
+            key={index}
+            className={`p-6 text-center hover:shadow-lg transition-shadow "bg-white"`}
+          >
+            <CardContent className="p-0">
+              <div className={cn("text-2xl mb-2 flex justify-center items-center text-black")}>
+                {skill.icon}
+              </div>
+              <p className={`font-medium "text-black"`}>{skill.name}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </section>
   );
 }

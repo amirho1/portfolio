@@ -6,22 +6,21 @@ export default function Nav() {
     {
       name: "About Me",
       href: "#about",
-      "aria-description": "Link to About me section"
+      "aria-description": "Link to About me section",
     },
     {
       name: "Skills",
       href: "#skills",
-      "aria-description": "Link to Skills section"
+      "aria-description": "Link to Skills section",
     },
-    // {
-    //   name: "Project",
-    //   href: "#projects",
-    // },
+    {
+      name: "Project",
+      href: "#projects",
+    },
     {
       name: "Contact Me",
       href: "#contact",
-      "aria-description": "Link to contact section"
-
+      "aria-description": "Link to contact section",
     },
   ];
 
@@ -50,7 +49,7 @@ export default function Nav() {
           target="_blank"
           aria-description="Amir Hossein salighedar PDF Resume"
         >
-          <Button className="bg-black text-white hover:bg-gray-800">Resume</Button>
+          <Button className=" text-white hover:bg-gray-800">Resume</Button>
         </Link>
       </nav>
     </header>
