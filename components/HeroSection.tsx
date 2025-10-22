@@ -12,7 +12,7 @@ export default function HeroSection() {
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
               <span className="font-normal">Hello I am</span>{" "}
               <span className="block font-bold underline">Amir Hossein Salighedar.</span>
-              <span className="block font-normal">Frontend Developer</span>
+              <span className="block font-normal">FullStack Developer</span>
               <span className="block font-normal">Based In Iran.</span>
             </h1>
             <p className="text-gray-600 text-lg max-w-md">
