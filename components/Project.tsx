@@ -15,7 +15,7 @@ const projects: ProjectT[] = [
     title: "Javascript Runtime visualization",
     description:
       "This is a fun project that I did to learn behind the scene of javascript and it's limited if you run it, it will parse and iterate the code and show you step by step what will happen when you call async, and sync functions",
-    image: "/runtime-visualization-screen-shoot.png?height=300&width=400",
+    image: "/runtime-visualization-screen-shoot.webp?height=300&width=400",
     url: "https://github.com/amirho1/JavaScript-Runtime-Environment.git",
   },
 ];
