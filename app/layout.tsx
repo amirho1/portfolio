@@ -2,10 +2,11 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { author, description, MAIL } from "../lib/constant";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
-const author = "Amir Hossein Salighedar";
-const description = `I'm passionate web developer with 4 years of experience who is into learning and enjoying to share my knowledge, I"m master of Javascript and typescript. Experienced working with multiple frameworks such as Next.js Nest.js also have deep knowledge of underlining of javascript engine.`;
 
 export const metadata: Metadata = {
   title:
@@ -16,11 +17,11 @@ export const metadata: Metadata = {
     "سلیقه دار",
     "امیر حسین سلیقه دار",
     "برنامه نویس وب",
-    "Frontend Developer",
+    "Fullstack Developer",
     "React Developer",
     "Next.js",
     "JavaScript",
-    "Web Development",
+    "Fullstack Development",
     "Portfolio",
     author,
     "Amir Hossein",
@@ -28,10 +29,13 @@ export const metadata: Metadata = {
     "AmirHosseinSalighehdar",
     "Salighehdar",
     "Salighedar",
+    "Front-End Developer",
+    "Back-End Developer",
     "Web Developer",
     "Software Engineer",
     "Full Stack Developer",
-    "amirhosseinsalighedar@gmail.com",
+    "Amirho Salighedar",
+    MAIL,
     "Node",
     "Zood-paz Founder",
     "amirho.site",
@@ -43,8 +47,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://amirho.site",
-    title: `${author} - Frontend Developer`,
-    description: `I'm passionate web developer with 4 years of experience who is into learning and enjoying to share my knowledge, 
+    title: `${author} - Fullstack Developer`,
+    description: `I'm passionate Fullstack developer with 4 years of experience who is into learning and enjoying to share my knowledge, 
     I"m master of Javascript and typescript. Experienced working with multiple frameworks
     such as Next.js Nest.js also have deep knowledge of underlining of javascript engine.`,
     siteName: `${author} Portfolio`,
@@ -52,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${author} - Frontend Developer`,
+    title: `${author} - Fullstack Developer`,
     description: description,
     creator: "@The_amirho",
   },
@@ -87,6 +91,7 @@ const jsonLD = {
     "Nest.js",
     "React",
     "Next.js",
+    "Vite",
     "AI Engineer",
     "CSS",
     "HTML 5",
@@ -97,15 +102,22 @@ const jsonLD = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(jsonLD).replace(/</g, "\\u003c"),
           }}
         />
+      </head>
+      <body className={inter.className}>
+        {/* Header */}
+        <Nav />
 
-        {children}
+        <main>{children}</main>
+
+        {/* Footer */}
+        <Footer />
       </body>
     </html>
   );
