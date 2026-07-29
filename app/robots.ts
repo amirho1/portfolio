@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://amirho.site/sitemap.xml",
-    host: "https://amirho.site/",
+    sitemap: "https://amirho.com/sitemap.xml",
+    host: "https://amirho.com/",
   };
 }

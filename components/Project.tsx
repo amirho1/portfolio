@@ -49,7 +49,7 @@ export default function Project() {
               alt={project.title}
               width={400}
               height={300}
-              className="rounded-lg w-full"
+              className="rounded-lg w-full object-fit"
             />
           </div>
         </div>

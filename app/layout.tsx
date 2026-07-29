@@ -5,6 +5,7 @@ import "./globals.css";
 import { author, description, MAIL } from "../lib/constant";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     MAIL,
     "Node",
     "Zood-paz Founder",
-    "amirho.site",
+    "amirho.com",
     "amirho",
   ],
   authors: [{ name: author }],
@@ -46,13 +47,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://amirho.site",
+    url: "https://amirho.com",
     title: `${author} - Fullstack Developer`,
     description: `I'm passionate Fullstack developer with 4 years of experience who is into learning and enjoying to share my knowledge, 
     I"m master of Javascript and typescript. Experienced working with multiple frameworks
     such as Next.js Nest.js also have deep knowledge of underlining of javascript engine.`,
     siteName: `${author} Portfolio`,
-    images: ["https://amirho.site/Portfolio_pic.webp?width=100&height=100"],
+    images: ["https://amirho.com/Portfolio_pic.webp?width=100&height=100"],
   },
   twitter: {
     card: "summary_large_image",
@@ -79,7 +80,7 @@ const jsonLD = {
   name: "Amir Hossein",
   lastname: "Salighedar",
   jobTitle: "Full stack developer",
-  url: "https://amirho.site",
+  url: "https://amirho.com",
   sameAs: [
     "https://github.com/amirho1",
     "https://linkedin.com/in/amirho",
@@ -110,7 +111,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={cn(inter.className, "h-screen")}>
         {/* Header */}
         <Nav />
 

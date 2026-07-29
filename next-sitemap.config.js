@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "https://amirho.site",
+  siteUrl: "https://amirho.com",
   generateRobotsTxt: true,
   changefreq: "monthly",
   priority: 1.0,
