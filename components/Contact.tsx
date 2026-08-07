@@ -1,31 +1,83 @@
-import { MAIL } from "@/lib/constant";
-import Link from "next/link";
-import React from "react";
-import { Button } from "./ui/button";
-import { Mail } from "lucide-react";
+import { ArrowRight, Download, Mail, Sparkles } from "lucide-react";
+import { PROFILE } from "@/lib/portfolio-data";
+import CurrentYear from "./CurrentYear";
+import { ConductorTrigger } from "./JourneyLink";
+import Socials from "./Socials";
 
 export default function Contact() {
   return (
-    <div className="bg-black [&>*]:text-white">
-      <section id="contact" className="container mx-auto px-4 py-16">
-        <div className="text-center space-y-8">
-          <h2 className="text-3xl md:text-4xl font-bold">Get In Touch</h2>
+    <section
+      id="contact"
+      className="journey-section contact-section"
+      aria-labelledby="contact-title"
+    >
+      <div className="contact-light" aria-hidden="true" />
+      <div className="cinematic-shell">
+        <div className="contact-panel">
+          <div className="contact-copy">
+            <p className="station-kicker">
+              <span>Final station</span>
+              Carriage 05 · Contact
+            </p>
+            <h2 id="contact-title" className="section-title">
+              Let&apos;s build the <em>next destination.</em>
+            </h2>
+            <p>
+              I&apos;m always open to discussing thoughtful products, ambitious
+              interfaces, and interesting engineering problems.
+            </p>
 
-          <p className="max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities and interesting projects. Feel free to
-            reach out if you'd like to collaborate or just say hello!
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href={`mailto:${MAIL}`}>
-              <Button variant="secondary">
-                <Mail className="w-4 h-4 mr-2" />
-                {MAIL}
-              </Button>
-            </Link>
+            <div className="contact-actions">
+              <a
+                className="button button-gold"
+                href={`mailto:${PROFILE.email}`}
+              >
+                <Mail aria-hidden="true" />
+                Start a conversation
+              </a>
+              <a
+                className="button button-glass"
+                href={PROFILE.resumeHref}
+                download
+              >
+                <Download aria-hidden="true" />
+                Résumé
+              </a>
+            </div>
           </div>
+
+          <aside className="contact-ticket" aria-label="Contact details">
+            <div className="ticket-topline">
+              <span>Amir Hossein Salighedar</span>
+              <span>AS · 05</span>
+            </div>
+            <div className="ticket-route">
+              <span>From</span>
+              <strong>Great ideas</strong>
+              <ArrowRight aria-hidden="true" />
+              <span>To</span>
+              <strong>Working software</strong>
+            </div>
+            <a className="ticket-email" href={`mailto:${PROFILE.email}`}>
+              <small>Direct line</small>
+              {PROFILE.email}
+            </a>
+            <ConductorTrigger className="ticket-conductor">
+              <Sparkles aria-hidden="true" />
+              Ask Conductor AI first
+            </ConductorTrigger>
+          </aside>
         </div>
-      </section>
-    </div>
+
+        <Socials />
+
+        <footer className="site-footer">
+          <p>
+            © <CurrentYear /> {PROFILE.name}
+          </p>
+          <p>Designed as a quiet journey through product engineering.</p>
+        </footer>
+      </div>
+    </section>
   );
 }

@@ -1,65 +1,68 @@
 import type React from "react";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
-import { author, description, MAIL } from "../lib/constant";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
+import { PROFILE, SKILLS, SOCIAL_LINKS } from "@/lib/portfolio-data";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"] });
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title:
-    "Amir Hossein Salighedar - web Developer | Portfolio |‌امیر حسین سلیقه دار - برنامه نویس وب ",
-  description: description,
+  metadataBase: new URL("https://amirho.com"),
+  title: `${PROFILE.name} · ${PROFILE.title}`,
+  description: PROFILE.introduction,
   keywords: [
-    "امیر حسین",
-    "سلیقه دار",
-    "امیر حسین سلیقه دار",
-    "برنامه نویس وب",
-    "Fullstack Developer",
-    "React Developer",
+    PROFILE.name,
+    "Senior Front-End Engineer",
+    "Frontend Developer",
+    "Full-Stack Developer",
+    "React",
     "Next.js",
+    "TypeScript",
     "JavaScript",
-    "Fullstack Development",
+    "AI product engineering",
     "Portfolio",
-    author,
-    "Amir Hossein",
-    "AmirHosseinSalighedar",
-    "AmirHosseinSalighehdar",
-    "Salighehdar",
-    "Salighedar",
-    "Front-End Developer",
-    "Back-End Developer",
-    "Web Developer",
-    "Software Engineer",
-    "Full Stack Developer",
-    "Amirho Salighedar",
-    MAIL,
-    "Node",
-    "Zood-paz Founder",
-    "amirho.com",
-    "amirho",
   ],
-  authors: [{ name: author }],
-  creator: "Amir Hossein Salighedar",
+  authors: [{ name: PROFILE.name, url: "https://amirho.com" }],
+  creator: PROFILE.name,
+  alternates: { canonical: "/" },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
-    type: "website",
+    type: "profile",
     locale: "en_US",
-    url: "https://amirho.com",
-    title: `${author} - Fullstack Developer`,
-    description: `I'm passionate Fullstack developer with 4 years of experience who is into learning and enjoying to share my knowledge, 
-    I"m master of Javascript and typescript. Experienced working with multiple frameworks
-    such as Next.js Nest.js also have deep knowledge of underlining of javascript engine.`,
-    siteName: `${author} Portfolio`,
-    images: ["https://amirho.com/Portfolio_pic.webp?width=100&height=100"],
+    url: "/",
+    title: `${PROFILE.name} · ${PROFILE.title}`,
+    description: PROFILE.introduction,
+    siteName: `${PROFILE.name} Portfolio`,
+    images: [
+      {
+        url: "/avatar.webp",
+        width: 480,
+        height: 640,
+        alt: PROFILE.name,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${author} - Fullstack Developer`,
-    description: description,
-    creator: "@The_amirho",
+    title: `${PROFILE.name} · ${PROFILE.title}`,
+    description: PROFILE.introduction,
+    creator: "@the_Amirhos",
+    images: ["/avatar.webp"],
   },
   robots: {
     index: true,
@@ -74,51 +77,41 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLD = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Amir Hossein",
-  lastname: "Salighedar",
-  jobTitle: "Full stack developer",
-  url: "https://amirho.com",
-  sameAs: [
-    "https://github.com/amirho1",
-    "https://linkedin.com/in/amirho",
-    "https://www.npmjs.com/~amirho",
-  ],
-  stack: [
-    "Javascript",
-    "Typescript",
-    "Nest.js",
-    "React",
-    "Next.js",
-    "Vite",
-    "AI Engineer",
-    "CSS",
-    "HTML 5",
-    "Postgres",
-  ],
+export const viewport: Viewport = {
+  themeColor: "#050506",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: PROFILE.name,
+  jobTitle: PROFILE.title,
+  url: "https://amirho.com",
+  email: `mailto:${PROFILE.email}`,
+  sameAs: SOCIAL_LINKS.map((link) => link.href),
+  knowsAbout: SKILLS.map((skill) => skill.name),
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLD).replace(/</g, "\\u003c"),
+            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
           }}
         />
       </head>
-      <body className={cn(inter.className, "h-screen")}>
-        {/* Header */}
-        <Nav />
-
-        <main>{children}</main>
-
-        {/* Footer */}
-        <Footer />
+      <body className={cn(manrope.variable, cormorant.variable)}>
+        {children}
       </body>
     </html>
   );

@@ -11,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://amirho.com/#home",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: "https://amirho.com/#about",
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -24,6 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://amirho.com/#projects",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: "https://amirho.com/#experience",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
