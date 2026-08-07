@@ -1,16 +1,10 @@
-export type StationId =
-  "home" | "projects" | "experience" | "about" | "contact";
+export type StationId = "home" | "projects" | "experience" | "about" | "contact";
 
 export interface Station {
   id: StationId;
   index: string;
   label: string;
   shortLabel: string;
-}
-
-export interface ProjectLink {
-  label: string;
-  href: string;
 }
 
 export interface PortfolioProject {
@@ -114,8 +108,7 @@ export const PROJECTS: PortfolioProject[] = [
     ],
     status: "Private installation",
     image: "/projects/hashtag-network.jpg",
-    imageAlt:
-      "Hashtag Network installation map with participant nodes around a factory",
+    imageAlt: "Hashtag Network installation map with participant nodes around a factory",
     links: [],
   },
   {
@@ -126,14 +119,7 @@ export const PROJECTS: PortfolioProject[] = [
     summary:
       "A web platform for recording or uploading audio, converting speech to structured text, creating summaries, and preparing reusable business outputs.",
     role: "Platform architecture and full-stack development",
-    technologies: [
-      "NestJS",
-      "React",
-      "TypeScript",
-      "Prisma",
-      "PostgreSQL",
-      "TanStack Query",
-    ],
+    technologies: ["NestJS", "React", "TypeScript", "Prisma", "PostgreSQL", "TanStack Query"],
     responsibilities: [
       "Mapped the end-to-end transcription, summarization, and export workflow.",
       "Designed role-based access and the supporting application architecture.",
@@ -159,8 +145,7 @@ export const PROJECTS: PortfolioProject[] = [
     ],
     status: "Open source",
     image: "/runtime-visualization-screen-shoot.webp",
-    imageAlt:
-      "JavaScript runtime visualizer showing an editor, call stack, queues, and Web APIs",
+    imageAlt: "JavaScript runtime visualizer showing an editor, call stack, queues, and Web APIs",
     links: [
       {
         label: "View live demo",
@@ -185,13 +170,7 @@ export const EXPERIENCES: ExperienceEntry[] = [
       "Implemented Server-Sent Events for real-time communication.",
       "Maintained the product monorepo with Turborepo.",
     ],
-    technologies: [
-      "LLM applications",
-      "React Router",
-      "esbuild",
-      "SSE",
-      "Turborepo",
-    ],
+    technologies: ["LLM applications", "React Router", "esbuild", "SSE", "Turborepo"],
   },
   {
     company: "Ariana Labs · vendor at Irancell",
@@ -270,9 +249,7 @@ export function getAssistantAnswer(question: string): AssistantAnswer {
     };
   }
 
-  if (
-    /\bai\b|llm|real.?time|sse|speech|stt|transcri/.test(normalizedQuestion)
-  ) {
+  if (/\bai\b|llm|real.?time|sse|speech|stt|transcri/.test(normalizedQuestion)) {
     return {
       text: "Amir has built an LLM-assisted coding product at Zood-paz, implemented real-time Server-Sent Events, and is designing an STT workflow that turns audio into summaries, tables, slides, and PDFs.",
       target: "#projects",
@@ -280,11 +257,7 @@ export function getAssistantAnswer(question: string): AssistantAnswer {
     };
   }
 
-  if (
-    /front.?end|frontend team|fit|react|typescript|next/.test(
-      normalizedQuestion,
-    )
-  ) {
+  if (/front.?end|frontend team|fit|react|typescript|next/.test(normalizedQuestion)) {
     return {
       text: "Amir has worked professionally in frontend roles since 2020. His core strengths are JavaScript, TypeScript, React, Next.js, product architecture, and translating complex workflows into clear interfaces.",
       target: "#experience",
@@ -292,11 +265,7 @@ export function getAssistantAnswer(question: string): AssistantAnswer {
     };
   }
 
-  if (
-    /project|work|strongest|portfolio|insta|hashtag|runtime/.test(
-      normalizedQuestion,
-    )
-  ) {
+  if (/project|work|strongest|portfolio|insta|hashtag|runtime/.test(normalizedQuestion)) {
     return {
       text: "Amir's selected work spans Insta-shop, the Hashtag Network gallery installation, an STT productivity platform, and an open-source JavaScript Runtime Visualization. Together they show product, visualization, AI workflow, and frontend depth.",
       target: "#projects",
@@ -312,11 +281,7 @@ export function getAssistantAnswer(question: string): AssistantAnswer {
     };
   }
 
-  if (
-    /about|strength|skill|stack|technology|technologies/.test(
-      normalizedQuestion,
-    )
-  ) {
+  if (/about|strength|skill|stack|technology|technologies/.test(normalizedQuestion)) {
     return {
       text: "Amir combines frontend craft with full-stack product thinking. JavaScript and TypeScript are his foundation, supported by React, Next.js, NestJS, Node.js, modern CSS, and practical real-time and AI integrations.",
       target: "#about",
