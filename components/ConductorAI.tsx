@@ -1,18 +1,13 @@
 "use client";
 
-import { FormEvent, useEffect, useRef, useState } from "react";
-import { ArrowRight, Bot, Send, Sparkles } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import {
   ASSISTANT_SUGGESTIONS,
   getAssistantAnswer,
   type AssistantAnswer,
 } from "@/lib/portfolio-data";
+import { ArrowRight, Bot, Send, Sparkles } from "lucide-react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { CONDUCTOR_OPEN_EVENT, JourneyLink } from "./JourneyLink";
 
 interface ConversationMessage {
@@ -31,9 +26,7 @@ const initialMessage: ConversationMessage = {
 export default function ConductorAI() {
   const [open, setOpen] = useState(false);
   const [question, setQuestion] = useState("");
-  const [messages, setMessages] = useState<ConversationMessage[]>([
-    initialMessage,
-  ]);
+  const [messages, setMessages] = useState<ConversationMessage[]>([initialMessage]);
   const inputRef = useRef<HTMLInputElement>(null);
   const messageId = useRef(1);
   const latestMessageRef = useRef<HTMLDivElement>(null);
@@ -44,17 +37,14 @@ export default function ConductorAI() {
     }
 
     window.addEventListener(CONDUCTOR_OPEN_EVENT, openConductor);
-    return () =>
-      window.removeEventListener(CONDUCTOR_OPEN_EVENT, openConductor);
+    return () => window.removeEventListener(CONDUCTOR_OPEN_EVENT, openConductor);
   }, []);
 
   useEffect(() => {
     if (!open || messages.length <= 1) return;
     latestMessageRef.current?.scrollIntoView({
       block: "nearest",
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? "auto"
-        : "smooth",
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
     });
   }, [messages, open]);
 
@@ -75,11 +65,7 @@ export default function ConductorAI() {
       answer,
     };
 
-    setMessages((currentMessages) => [
-      ...currentMessages,
-      visitorMessage,
-      assistantMessage,
-    ]);
+    setMessages(currentMessages => [...currentMessages, visitorMessage, assistantMessage]);
     setQuestion("");
   }
 
@@ -107,7 +93,7 @@ export default function ConductorAI() {
 
       <DialogContent
         className="conductor-dialog"
-        onOpenAutoFocus={(event) => {
+        onOpenAutoFocus={event => {
           event.preventDefault();
           inputRef.current?.focus();
         }}
@@ -122,9 +108,8 @@ export default function ConductorAI() {
           </div>
         </div>
         <DialogDescription className="conductor-description">
-          Ask about Amir&apos;s work and experience. Responses come from this
-          portfolio&apos;s verified content; no message is sent to an external
-          AI service.
+          Ask about Amir&apos;s work and experience. Responses come from this portfolio&apos;s
+          verified content; no message is sent to an external AI service.
         </DialogDescription>
 
         <div className="conductor-messages" aria-live="polite">
@@ -161,12 +146,8 @@ export default function ConductorAI() {
         </div>
 
         <div className="conductor-suggestions" aria-label="Suggested questions">
-          {ASSISTANT_SUGGESTIONS.map((suggestion) => (
-            <button
-              key={suggestion}
-              type="button"
-              onClick={() => askQuestion(suggestion)}
-            >
+          {ASSISTANT_SUGGESTIONS.map(suggestion => (
+            <button key={suggestion} type="button" onClick={() => askQuestion(suggestion)}>
               <span>{suggestion}</span>
               <ArrowRight aria-hidden="true" />
             </button>
@@ -174,22 +155,18 @@ export default function ConductorAI() {
         </div>
 
         <form className="conductor-form" onSubmit={handleSubmit}>
-          <label htmlFor="conductor-question" className="sr-only">
+          {/* <label htmlFor="conductor-question" className="sr-only">
             Ask Conductor AI a question
-          </label>
+          </label> */}
           <input
             ref={inputRef}
             id="conductor-question"
             value={question}
-            onChange={(event) => setQuestion(event.target.value)}
+            onChange={event => setQuestion(event.target.value)}
             placeholder="Ask about Amir's work…"
             autoComplete="off"
           />
-          <button
-            type="submit"
-            aria-label="Send question"
-            disabled={!question.trim()}
-          >
+          <button type="submit" aria-label="Send question" disabled={!question.trim()}>
             <Send aria-hidden="true" />
           </button>
         </form>

@@ -1,22 +1,14 @@
-import { ArrowRight, Code2, Radio, Sparkles } from "lucide-react";
 import { PROFILE } from "@/lib/portfolio-data";
-import { ConductorTrigger, JourneyLink } from "./JourneyLink";
+import { ArrowRight, Code2, Radio } from "lucide-react";
 import Link from "next/link";
+import { JourneyLink } from "./JourneyLink";
 
 export default function HeroSection() {
   return (
-    <section
-      id="home"
-      className="hero-section journey-section"
-      aria-labelledby="hero-title"
-    >
+    <section id="home" className="hero-section journey-section" aria-labelledby="hero-title">
       <div className="hero-atmosphere" aria-hidden="true" />
       <div className="cinematic-shell hero-shell">
-        <Link
-          href="/#home"
-          className="express-brand"
-          aria-label="Amir Hossein Salighedar"
-        >
+        <Link href="/#home" className="express-brand" aria-label="Amir Hossein Salighedar">
           <span className="express-monogram">AS</span>
           <span className="express-divider" aria-hidden="true" />
           <span className="express-name"> Amir Hossein - Salighedar</span>
@@ -40,10 +32,10 @@ export default function HeroSection() {
                 Explore selected work
                 <ArrowRight aria-hidden="true" />
               </JourneyLink>
-              <ConductorTrigger className="button button-glass">
+              {/* <ConductorTrigger className="button button-glass">
                 <Sparkles aria-hidden="true" />
                 Ask Conductor AI
-              </ConductorTrigger>
+              </ConductorTrigger> */}
             </div>
 
             <dl className="hero-manifest" aria-label="Portfolio highlights">

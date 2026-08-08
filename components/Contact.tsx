@@ -1,7 +1,6 @@
-import { ArrowRight, Download, Mail, Sparkles } from "lucide-react";
 import { PROFILE } from "@/lib/portfolio-data";
+import { ArrowRight, Download, Mail } from "lucide-react";
 import CurrentYear from "./CurrentYear";
-import { ConductorTrigger } from "./JourneyLink";
 import Socials from "./Socials";
 
 export default function Contact() {
@@ -23,23 +22,16 @@ export default function Contact() {
               Let&apos;s build the <em>next destination.</em>
             </h2>
             <p>
-              I&apos;m always open to discussing thoughtful products, ambitious
-              interfaces, and interesting engineering problems.
+              I&apos;m always open to discussing thoughtful products, ambitious interfaces, and
+              interesting engineering problems.
             </p>
 
             <div className="contact-actions">
-              <a
-                className="button button-gold"
-                href={`mailto:${PROFILE.email}`}
-              >
+              <a className="button button-gold" href={`mailto:${PROFILE.email}`}>
                 <Mail aria-hidden="true" />
                 Start a conversation
               </a>
-              <a
-                className="button button-glass"
-                href={PROFILE.resumeHref}
-                download
-              >
+              <a className="button button-glass" href={PROFILE.resumeHref} download>
                 <Download aria-hidden="true" />
                 Résumé
               </a>
@@ -62,10 +54,10 @@ export default function Contact() {
               <small>Direct line</small>
               {PROFILE.email}
             </a>
-            <ConductorTrigger className="ticket-conductor">
+            {/* <ConductorTrigger className="ticket-conductor">
               <Sparkles aria-hidden="true" />
               Ask Conductor AI first
-            </ConductorTrigger>
+            </ConductorTrigger> */}
           </aside>
         </div>
 

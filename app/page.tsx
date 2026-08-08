@@ -1,7 +1,6 @@
 "use client";
 
 import About from "@/components/About";
-import ConductorAI from "@/components/ConductorAI";
 import Contact from "@/components/Contact";
 import Experiences from "@/components/Experiences";
 import HeroSection from "@/components/HeroSection";
@@ -23,7 +22,7 @@ export default function Portfolio() {
         Skip to portfolio content
       </a>
       <JourneyNavigation />
-      <ConductorAI />
+      {/* <ConductorAI /> */}
       <main id="main-content">
         <HeroSection />
         <Project />
