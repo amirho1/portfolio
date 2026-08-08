@@ -4,7 +4,11 @@ export default function useWebLoading() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const finishLoading = () => setLoading(false);
+    const finishLoading = () => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);
+    };
 
     if (document.readyState === "complete") {
       finishLoading();
