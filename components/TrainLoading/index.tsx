@@ -4,7 +4,7 @@ import "./index.css";
 export default function TrainLoading() {
   return (
     <div
-      className="container fixed inset-0 z-[100]"
+      className="container fixed inset-0 z-100"
       role="status"
       aria-label="Loading portfolio"
     >
