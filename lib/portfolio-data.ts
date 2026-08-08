@@ -7,6 +7,10 @@ export interface Station {
   shortLabel: string;
 }
 
+export interface ProjectLink {
+  label: string;
+  href: string;
+}
 export interface PortfolioProject {
   id: string;
   index: string;
@@ -267,7 +271,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: "https://www.instagram.com/amirhosseinsalighedar/",
     icon: "instagram",
   },
-  { name: "X", href: "https://x.com/the_Amirhos" },
+  { name: "X", href: "https://x.com/the_Amirhos", icon: "x" },
 ];
 
 export const ASSISTANT_SUGGESTIONS = [
