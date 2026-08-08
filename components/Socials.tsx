@@ -12,15 +12,16 @@ function SocialMark({ icon }: { icon: SocialIcon }) {
 export default function Socials() {
   return (
     <ul className="social-links" aria-label="Social profiles">
-      {SOCIAL_LINKS.map((link) => (
+      {SOCIAL_LINKS.map(link => (
         <li key={link.href}>
           <Link
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Amir on ${link.name}`}
+            className="text-center"
           >
-            <SocialMark icon={link.icon} />
+            {link.icon && <SocialMark icon={link.icon} />}
             <span className="text-center">{link.name}</span>
           </Link>
         </li>

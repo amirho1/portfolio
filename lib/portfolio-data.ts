@@ -53,7 +53,7 @@ export interface AssistantAnswer {
 
 export const PROFILE = {
   name: "Amir Hossein Salighedar",
-  title: "Senior Front-End Engineer",
+  title: "Simple engineer",
   email: "amirhosseinsalighedar@gmail.com",
   introduction:
     "Passionate Software Engineer tackling challenges at the intersection of technology and human experience.",
@@ -111,24 +111,7 @@ export const PROJECTS: PortfolioProject[] = [
     imageAlt: "Hashtag Network installation map with participant nodes around a factory",
     links: [],
   },
-  {
-    id: "stt-platform",
-    index: "03",
-    eyebrow: "AI productivity platform",
-    title: "STT Platform",
-    summary:
-      "A web platform for recording or uploading audio, converting speech to structured text, creating summaries, and preparing reusable business outputs.",
-    role: "Platform architecture and full-stack development",
-    technologies: ["NestJS", "React", "TypeScript", "Prisma", "PostgreSQL", "TanStack Query"],
-    responsibilities: [
-      "Mapped the end-to-end transcription, summarization, and export workflow.",
-      "Designed role-based access and the supporting application architecture.",
-      "Planned structured table, slide, and PDF output generation.",
-    ],
-    status: "Platform in development",
-    visual: "stt",
-    links: [],
-  },
+
   {
     id: "javascript-runtime",
     index: "04",
@@ -157,13 +140,67 @@ export const PROJECTS: PortfolioProject[] = [
       },
     ],
   },
+  {
+    id: "react-special-cursor",
+    index: "05",
+    eyebrow: "Open-source React library",
+    title: "React Special Cursor",
+    summary:
+      "A customizable React cursor package that lets sites style the pointer for individual hover targets, render content inside the cursor, and opt out on mobile.",
+    role: "Creator and library maintainer",
+    technologies: ["React", "TypeScript", "SCSS", "Jest", "Webpack"],
+    responsibilities: [
+      "Designed a class-based API for assigning distinct cursor styles to hover targets.",
+      "Enabled custom text and elements inside the cursor dot for richer interactions.",
+      "Packaged the TypeScript library with mobile opt-out behavior and automated tests.",
+    ],
+    status: "Open source · npm package",
+    image: "/projects/react-special-cursor.webp",
+    imageAlt:
+      "Dark interface mockup with gold and violet cursor rings changing shape across interactive cards",
+    links: [
+      {
+        label: "View live demo",
+        href: "https://amirho1.github.io/react-special-cursor/",
+      },
+      {
+        label: "View package",
+        href: "https://www.npmjs.com/package/react-special-cursor",
+      },
+      {
+        label: "View source",
+        href: "https://github.com/amirho1/react-special-cursor",
+      },
+    ],
+  },
 ];
 
 export const EXPERIENCES: ExperienceEntry[] = [
   {
+    company: "Edora Media",
+    role: "Senior Frontend developer",
+    period: "Oct 2025 – Mar 2026",
+    highlights: [
+      "Built a scalable admin panel in a monorepo architecture using Next.js and TypeScript.",
+      "Developed dynamic course flow management and a reusable form builder similar to Google Forms.",
+      "Created a separate Vite-based student payment portal, integrating Stripe and premium credit features.",
+      "Ensured 100% test coverage with Jest, improving reliability and maintainability.",
+    ],
+    technologies: [
+      "typescript",
+      "Next.sj",
+      "Zod",
+      "jest",
+      "Axios",
+      "Tanstack-query",
+      "React",
+      "Monorepo",
+    ],
+  },
+  {
     company: "Zood-paz",
     role: "Front End Engineer",
-    period: "2025 — 2025",
+    period: "Mar 2025 – Jun 2025",
     highlights: [
       "Developed a SaaS platform with an LLM-powered chatbot for AI-assisted coding.",
       "Automated user project builds with esbuild and React Router.",
@@ -175,7 +212,7 @@ export const EXPERIENCES: ExperienceEntry[] = [
   {
     company: "Ariana Labs · vendor at Irancell",
     role: "Front End Developer",
-    period: "2022 — 2024",
+    period: "May 2023 - Mar 2025",
     highlights: [
       "Developed a knowledge-system platform and multiple web applications.",
       "Worked with cross-functional teams to ship reliable product integrations.",
@@ -185,7 +222,7 @@ export const EXPERIENCES: ExperienceEntry[] = [
   {
     company: "Comviva & Saie Group · vendor at Irancell",
     role: "Web Developer",
-    period: "2021 — 2022",
+    period: "Jun 2022 - Apr 2023",
     highlights: [
       "Developed and maintained the legacy MyIrancell web application.",
       "Collaborated across teams to integrate changes with existing systems.",
@@ -205,22 +242,24 @@ export const EXPERIENCES: ExperienceEntry[] = [
 
 export const SKILLS: Skill[] = [
   { name: "JavaScript", mark: "JS" },
-  { name: "TypeScript", mark: "TS" },
-  { name: "React", mark: "R" },
+  { name: "TypeScript", mark: "TS", href: "https://www.typescriptlang.org/" },
+  { name: "React", mark: "R", href: "react.dev" },
   { name: "Next.js", mark: "N", href: "https://nextjs.org/" },
-  { name: "NestJS", mark: "NS" },
-  { name: "Node.js", mark: "ND" },
-  { name: "Tailwind CSS", mark: "TW" },
-  { name: "Sass / SCSS", mark: "SC" },
-  { name: "Git", mark: "GT" },
-  { name: "Material UI", mark: "UI" },
+  { name: "NestJS", mark: "NS", href: "https://docs.nestjs.com/" },
+  { name: "Node.js", mark: "ND", href: "https://nodejs.org/" },
+  { name: "Tailwind CSS", mark: "TW", href: "https://tailwindcss.com/" },
+  { name: "Sass / SCSS", mark: "SC", href: "https://sass-lang.com/" },
+  { name: "Git", mark: "GT", href: "https://git-scm.com/" },
+  { name: "Material UI", mark: "UI", href: "https://mui.com/material-ui/" },
+  { name: "Lang Chain", mark: "LC", href: "https://www.langchain.com/" },
+  { name: "Postgres", mark: "PG", href: "https://www.postgresql.org/" },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
   { name: "GitHub", href: "https://github.com/amirho1", icon: "github" },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/amirhossein-s-8b165618a/",
+    href: "https://www.linkedin.com/in/amirho/",
     icon: "linkedin",
   },
   {
@@ -265,9 +304,9 @@ export function getAssistantAnswer(question: string): AssistantAnswer {
     };
   }
 
-  if (/project|work|strongest|portfolio|insta|hashtag|runtime/.test(normalizedQuestion)) {
+  if (/project|work|strongest|portfolio|insta|hashtag|runtime|cursor/.test(normalizedQuestion)) {
     return {
-      text: "Amir's selected work spans Insta-shop, the Hashtag Network gallery installation, an STT productivity platform, and an open-source JavaScript Runtime Visualization. Together they show product, visualization, AI workflow, and frontend depth.",
+      text: "Amir's selected work spans Insta-shop, the Hashtag Network gallery installation, an open-source JavaScript Runtime Visualization, and the published React Special Cursor package. Together they show product, visualization, developer-tooling, and frontend depth.",
       target: "#projects",
       actionLabel: "Explore projects",
     };
