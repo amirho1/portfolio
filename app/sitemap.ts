@@ -2,6 +2,10 @@ import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
+/**
+ * Return canonical localized URLs and alternate-language relationships.
+ * @returns The localized sitemap entries.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
@@ -9,42 +13,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
+      alternates: {
+        languages: {
+          en: "https://amirho.com",
+          fa: "https://amirho.com/fa",
+        },
+      },
     },
     {
-      url: "https://amirho.com/#home",
+      url: "https://amirho.com/fa",
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://amirho.com/#about",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://amirho.com/#skills",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://amirho.com/#projects",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://amirho.com/#experience",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://amirho.com/#contact",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 1,
+      alternates: {
+        languages: {
+          en: "https://amirho.com",
+          fa: "https://amirho.com/fa",
+        },
+      },
     },
   ];
 }

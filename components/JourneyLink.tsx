@@ -1,10 +1,9 @@
 "use client";
 
 import type { MouseEvent, ReactNode } from "react";
-import type { StationId } from "@/lib/portfolio-data";
+import type { StationId } from "@/i18n/types";
 
-export const JOURNEY_NAVIGATE_EVENT = "obsidian-express:navigate";
-export const CONDUCTOR_OPEN_EVENT = "obsidian-express:open-conductor";
+export const journeyNavigateEvent = "obsidian-express:navigate";
 
 interface JourneyLinkProps {
   target: StationId;
@@ -13,17 +12,23 @@ interface JourneyLinkProps {
   onNavigate?: () => void;
 }
 
+/**
+ * Render a link that asks the journey navigation to scroll to a station.
+ * @param props - Journey link properties.
+ * @returns The journey link.
+ */
 export function JourneyLink({
   target,
   className,
   children,
   onNavigate,
 }: JourneyLinkProps) {
+  /** Handle a station-link click without reloading the page. */
   function handleClick(event: MouseEvent<HTMLAnchorElement>) {
     event.preventDefault();
     onNavigate?.();
     window.dispatchEvent(
-      new CustomEvent<{ target: StationId }>(JOURNEY_NAVIGATE_EVENT, {
+      new CustomEvent<{ target: StationId }>(journeyNavigateEvent, {
         detail: { target },
       }),
     );
@@ -33,28 +38,5 @@ export function JourneyLink({
     <a href={`#${target}`} className={className} onClick={handleClick}>
       {children}
     </a>
-  );
-}
-
-interface ConductorTriggerProps {
-  className?: string;
-  children: ReactNode;
-  ariaLabel?: string;
-}
-
-export function ConductorTrigger({
-  className,
-  children,
-  ariaLabel,
-}: ConductorTriggerProps) {
-  return (
-    <button
-      type="button"
-      className={className}
-      aria-label={ariaLabel}
-      onClick={() => window.dispatchEvent(new Event(CONDUCTOR_OPEN_EVENT))}
-    >
-      {children}
-    </button>
   );
 }

@@ -394,7 +394,10 @@ type TrialServiceDependencies = {
  * @param userId - The user ID.
  * @returns The created invoice.
  */
-export const createTrialInvoice = async (deps: TrialServiceDependencies, userId: string) => {
+export const createTrialInvoice = async (
+  deps: TrialServiceDependencies,
+  userId: string,
+) => {
   const plan = await deps.getFreeTrialPlan();
 
   if (!plan) {
@@ -494,7 +497,7 @@ export const createFreeTrialSubscription = async (userId: string) => {
 ## Do Not
 
 ```typescript
-bot.command("trial", async ctx => {
+bot.command("trial", async (ctx) => {
   const plan = await db.plan.findUnique({
     where: {
       name: FREE_TRIAL_PLAN_NAME,

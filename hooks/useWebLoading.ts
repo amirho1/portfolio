@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
 
+/**
+ * Keep the initial loading overlay visible briefly after the window loads.
+ * @returns Whether the loading overlay should remain visible.
+ */
 export default function useWebLoading() {
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const finishLoading = () => {
-      setTimeout(() => {
+  useEffect(function watchWindowLoad() {
+    /** Finish the visual loading sequence. */
+    function finishLoading() {
+      window.setTimeout(function hideLoadingOverlay() {
         setLoading(false);
       }, 500);
-    };
+    }
 
     if (document.readyState === "complete") {
       finishLoading();
@@ -17,7 +22,9 @@ export default function useWebLoading() {
 
     window.addEventListener("load", finishLoading);
 
-    return () => window.removeEventListener("load", finishLoading);
+    return function stopWatchingWindowLoad() {
+      window.removeEventListener("load", finishLoading);
+    };
   }, []);
 
   return loading;
