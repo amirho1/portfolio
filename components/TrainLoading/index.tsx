@@ -7,7 +7,7 @@ export default function TrainLoading() {
       role="status"
       aria-label="Loading portfolio"
     >
-      <div className="toy-train">
+      <div className="toy-train rtl:right-[50%]">
         <div className="engine">
           <div className="window">
             <div className="engine-main">
@@ -30,7 +30,7 @@ export default function TrainLoading() {
             <div className="normal-wheel"></div>
           </div>
         </div>
-        <div className="tracks">
+        <div className="tracks rtl:-right-16">
           <span></span>
           <span></span>
         </div>
