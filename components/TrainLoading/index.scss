@@ -18,8 +18,16 @@
   left: 0;
   top: 0;
   background:
-    radial-gradient(circle at 72% 25%, var(--trainVioletGlow), var(--trainClear) 32%),
-    radial-gradient(circle at 20% 75%, var(--trainGoldGlow), var(--trainClear) 36%),
+    radial-gradient(
+      circle at 72% 25%,
+      var(--trainVioletGlow),
+      var(--trainClear) 32%
+    ),
+    radial-gradient(
+      circle at 20% 75%,
+      var(--trainGoldGlow),
+      var(--trainClear) 36%
+    ),
     var(--trainBackground);
 
   &,

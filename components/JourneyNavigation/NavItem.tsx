@@ -35,7 +35,11 @@ export default function RenderStation({
       key={id}
       href={`#${id}`}
       className={cn(
-        "relative flex min-h-[4.45rem] items-center gap-[0.8rem] rounded-xl p-[0.35rem] text-textMuted transition-colors hover:bg-[rgba(17,17,23,0.64)] hover:text-foreground max-[1099px]:min-h-[3.85rem] max-[1099px]:min-w-0 max-[1099px]:flex-1 max-[1099px]:flex-col max-[1099px]:justify-center max-[1099px]:gap-1 max-[1099px]:p-[0.2rem] max-[1099px]:text-center",
+        "relative flex min-h-[4.45rem] items-center gap-8 rounded-xl",
+        "p-4 text-textMuted transition-colors hover:bg-gold/20 hover:text-foreground",
+        "max-[1099px]:min-h-[3.85rem] max-[1099px]:min-w-0 max-[1099px]:flex-1",
+        "max-[1099px]:flex-col max-[1099px]:justify-center max-[1099px]:gap-4",
+        "max-[1099px]:p-[0.2rem] max-[1099px]:text-center",
         isActive && "text-goldLight",
       )}
       aria-current={isActive ? "location" : undefined}

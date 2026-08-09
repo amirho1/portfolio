@@ -1,7 +1,11 @@
 "use client";
 
-import RenderStation from "@/components/JourneyNavigation/RenderStation";
-import type { PortfolioMessages, StationId, StationMessage } from "@/i18n/types";
+import RenderStation from "@/components/JourneyNavigation/NavItem";
+import type {
+  PortfolioMessages,
+  StationId,
+  StationMessage,
+} from "@/i18n/types";
 import { cn } from "@/lib/utils";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { journeyNavigateEvent } from "../JourneyLink";
@@ -20,7 +24,9 @@ function prefersReducedMotion(): boolean {
  * @param props - Localized navigation properties.
  * @returns The journey navigation and transition overlay.
  */
-export default function JourneyNavigation({ messages }: JourneyNavigationProps) {
+export default function JourneyNavigation({
+  messages,
+}: JourneyNavigationProps) {
   const [activeStation, setActiveStation] = useState<StationId>("home");
   const [destination, setDestination] = useState<StationMessage | null>(null);
   const transitionTimers = useRef<number[]>([]);
@@ -124,15 +130,35 @@ export default function JourneyNavigation({ messages }: JourneyNavigationProps) 
   return (
     <>
       <nav
-        className="fixed end-[1.4rem] top-1/2 z-[70] flex w-[10.7rem] -translate-y-1/2 flex-col gap-[0.55rem] py-[0.7rem] max-[1099px]:bottom-[calc(0.55rem+env(safe-area-inset-bottom))] max-[1099px]:end-[0.65rem] max-[1099px]:start-[0.65rem] max-[1099px]:top-auto max-[1099px]:min-h-[4.8rem] max-[1099px]:w-auto max-[1099px]:translate-y-0 max-[1099px]:flex-row max-[1099px]:justify-around max-[1099px]:gap-0 max-[1099px]:rounded-[1.15rem] max-[1099px]:border max-[1099px]:border-border max-[1099px]:bg-[rgba(8,8,11,0.92)] max-[1099px]:p-[0.45rem] max-[1099px]:shadow-[0_-1.2rem_4rem_rgba(0,0,0,0.4)] max-[1099px]:backdrop-blur-xl max-[600px]:bottom-[calc(0.35rem+env(safe-area-inset-bottom))] max-[600px]:end-[0.4rem] max-[600px]:start-[0.4rem] max-[600px]:min-h-[4.45rem] max-[600px]:px-[0.2rem]"
+        className={cn(
+          "fixed inset-e-[1.4rem] top-1/2 z-70 flex w-[10.7rem] -translate-y-1/2",
+          "flex-col gap-[0.55rem] py-[0.7rem]",
+          "max-[1099px]:bottom-[calc(0.55rem+env(safe-area-inset-bottom))]",
+          "max-[1099px]:inset-e-[0.65rem] max-[1099px]:inset-s-[0.65rem]",
+          "max-[1099px]:top-auto max-[1099px]:h-24 max-[1099px]:min-h-[4.8rem] max-[1099px]:w-auto",
+          "max-[1099px]:translate-y-0 max-[1099px]:flex-row max-[1099px]:justify-around",
+          "max-[1099px]:gap-0 max-[1099px]:rounded-[1.15rem] max-[1099px]:border",
+          "max-[1099px]:border-border max-[1099px]:bg-[rgba(8,8,11,0.92)] max-[1099px]:p-[0.45rem]",
+          "max-[1099px]:shadow-[0_-1.2rem_4rem_rgba(0,0,0,0.4)] max-[1099px]:backdrop-blur-xl",
+          "max-[600px]:bottom-[calc(0.35rem+env(safe-area-inset-bottom))] max-[600px]:inset-e-[0.4rem]",
+          "max-[600px]:inset-s-[0.4rem] max-[600px]:min-h-[4.45rem] max-[600px]:px-[0.2rem]",
+        )}
         aria-label={messages.common.portfolioJourneyLabel}
       >
         <div
-          className="absolute bottom-[2.7rem] inset-s-[1.45rem] top-[2.7rem] w-px bg-[linear-gradient(var(--gold),rgba(128,102,178,0.36),var(--border))] max-[1099px]:bottom-auto max-[1099px]:end-[2.8rem] max-[1099px]:start-[2.8rem] max-[1099px]:top-[1.55rem] max-[1099px]:h-px max-[1099px]:w-auto max-[1099px]:bg-[linear-gradient(90deg,var(--gold),rgba(128,102,178,0.34),var(--border))] max-[1099px]:rtl:bg-[linear-gradient(270deg,var(--gold),rgba(128,102,178,0.34),var(--border))]"
+          className={cn(
+            "absolute bottom-[2.7rem] inset-s-[1.45rem] rtl:right-8.5 left-8.5 ",
+            "top-[2.7rem] w-px bg-[linear-gradient(var(--gold),rgba(128,102,178,0.36),var(--border))]",
+            "max-[1099px]:bottom-auto max-[1099px]:inset-e-[2.8rem]",
+            "max-[1099px]:inset-s-[2.8rem] max-[1099px]:top-8 ",
+            "max-[1099px]:h-px max-[1099px]:w-auto",
+            "max-[1099px]:bg-[linear-gradient(90deg,var(--gold),rgba(128,102,178,0.34),var(--border))]",
+            "max-[1099px]:rtl:bg-[linear-gradient(270deg,var(--gold),rgba(128,102,178,0.34),var(--border))]",
+          )}
           aria-hidden="true"
         />
 
-        {messages.stations.map(station => (
+        {messages.stations.map((station) => (
           <RenderStation
             key={station.id}
             {...station}

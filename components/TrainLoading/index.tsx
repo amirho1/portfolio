@@ -2,7 +2,11 @@ import "./index.scss";
 
 export default function TrainLoading() {
   return (
-    <div className="trainLoading train-wrapper" role="status" aria-label="Loading portfolio">
+    <div
+      className="trainLoading train-wrapper"
+      role="status"
+      aria-label="Loading portfolio"
+    >
       <div className="toy-train">
         <div className="engine">
           <div className="window">

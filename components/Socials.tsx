@@ -1,7 +1,7 @@
-import { Github, Instagram, Linkedin } from "lucide-react";
-import Link from "next/link";
 import { formatMessage } from "@/i18n/formatMessage";
 import type { PortfolioMessages, SocialIcon } from "@/i18n/types";
+import { Github, Instagram, Linkedin } from "lucide-react";
+import Link from "next/link";
 
 interface SocialsProps {
   messages: PortfolioMessages;

@@ -6,7 +6,26 @@
 
 @theme {
   --color-background: var(--background);
+  --color-backgroundElevated: var(--background-elevated);
   --color-foreground: var(--text-primary);
+
+  --color-surface: var(--surface);
+  --color-surfaceGlass: var(--surface-glass);
+  --color-surfaceHover: var(--surface-hover);
+
+  --color-borderActive: var(--border-active);
+
+  --color-textPrimary: var(--text-primary);
+  --color-textSecondary: var(--text-secondary);
+  --color-textMuted: var(--text-muted);
+
+  --color-gold: var(--gold);
+  --color-goldLight: var(--gold-light);
+  --color-amber: var(--amber);
+  --color-violet: var(--violet);
+  --color-violetMuted: var(--violet-muted);
+  --color-success: var(--success);
+  --color-error: var(--error);
 
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -90,7 +109,7 @@
     border-color: var(--color-gray-200, currentcolor);
   }
 }
-
+/* Theme colors */
 :root {
   --background: #050506;
   --background-elevated: #0b0b0f;

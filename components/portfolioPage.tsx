@@ -26,7 +26,11 @@ const noiseStyle: CSSProperties = {
  * @param props - Localized portfolio page properties.
  * @returns The localized portfolio page.
  */
-export default function PortfolioPage({ messages, className, ...props }: PortfolioPageProps) {
+export default function PortfolioPage({
+  messages,
+  className,
+  ...props
+}: PortfolioPageProps) {
   const isLoading = useWebLoading();
 
   if (isLoading) return <TrainLoading />;
@@ -39,14 +43,14 @@ export default function PortfolioPage({ messages, className, ...props }: Portfol
         aria-hidden="true"
       />
       <a
-        className="fixed start-3 top-3 z-[100] -translate-y-[180%] rounded-lg border border-gold bg-backgroundElevated px-4 py-[0.8rem] text-foreground transition-transform duration-200 focus:translate-y-0"
+        className="fixed inset-s-3 top-3 z-[100] translate-y-[-180%] rounded-lg border border-gold bg-backgroundElevated px-4 py-[0.8rem] text-foreground transition-transform duration-200 focus:translate-y-0"
         href="#main-content"
       >
         {messages.common.skipToContent}
       </a>
       <LanguageSwitcher messages={messages} />
       <JourneyNavigation messages={messages} />
-      <main id="main-content">
+      <main>
         <HeroSection messages={messages} />
         <Project messages={messages} />
         <Experiences messages={messages} />

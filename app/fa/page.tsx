@@ -6,5 +6,10 @@ import { getMessages } from "@/i18n/messages";
  * @returns The Persian portfolio page.
  */
 export default function PersianPortfolioPage() {
-  return <PortfolioPage className="font-['IRANYekan']" messages={getMessages("fa")} />;
+  return (
+    <PortfolioPage
+      className="font-['IRANYekan']"
+      messages={getMessages("fa")}
+    />
+  );
 }

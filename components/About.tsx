@@ -1,4 +1,5 @@
-import Image from "next/image";
+import type { PortfolioMessages, StrengthMessage } from "@/i18n/types";
+import { cn } from "@/lib/utils";
 import {
   ArrowUpRight,
   Compass,
@@ -6,8 +7,8 @@ import {
   Layers3,
   Sparkles,
 } from "lucide-react";
-import type { PortfolioMessages, StrengthMessage } from "@/i18n/types";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
 import {
   directionalIcon,
   eyebrow,
@@ -162,14 +163,14 @@ export default function About({ messages }: AboutProps) {
               return (
                 <li key={skill.name}>
                   {skill.href ? (
-                    <a
+                    <Link
                       className="flex min-h-[4.6rem] items-center gap-[0.85rem] px-4 py-[0.8rem] text-[0.8rem] text-textSecondary transition-colors hover:bg-[rgba(214,169,95,0.05)] hover:text-foreground"
                       href={skill.href}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       {content}
-                    </a>
+                    </Link>
                   ) : (
                     <div className="flex min-h-[4.6rem] items-center gap-[0.85rem] px-4 py-[0.8rem] text-[0.8rem] text-textSecondary">
                       {content}
