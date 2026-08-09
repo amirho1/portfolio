@@ -29,7 +29,7 @@ export default function HeroSection({ messages }: HeroSectionProps) {
     "p-[0.8rem] shadow-[0_1.8rem_5rem_rgba(0,0,0,0.55)] backdrop-blur-xl",
     "max-[820px]:inset-e-0 max-[820px]:inset-s-[38%] max-[600px]:bottom-[-50px] max-[600px]:right-0",
     "max-[600px]:left-[150px]  max-[1099px]:left-[30px]",
-    "max-[600px]:end-[0.35rem] max-[600px]:start-[17%] max-[600px]:p-2 right-20",
+    "max-[600px]:end-[0.35rem] max-[600px]:start-[17%] max-[600px]:p-2 right-20 rtl:right-50 rtl:max-[1099px]:right-50",
   );
 
   return (

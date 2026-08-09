@@ -28,6 +28,7 @@ export default function Socials({ messages }: SocialsProps) {
   return (
     <ul
       className="mt-[clamp(5rem,9vw,8rem)] flex list-none flex-wrap gap-[0.6rem] border-y border-border px-0 py-[1.15rem] max-[600px]:grid max-[600px]:grid-cols-2"
+      dir="ltr"
       aria-label={messages.contactSection.socialProfilesLabel}
     >
       {messages.socials.map(function renderSocialLink(social) {

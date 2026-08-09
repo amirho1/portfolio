@@ -1,7 +1,7 @@
-import { ArrowRight, Download, Mail } from "lucide-react";
 import { formatMessage } from "@/i18n/formatMessage";
 import type { PortfolioMessages } from "@/i18n/types";
 import { cn } from "@/lib/utils";
+import { ArrowRight, Download, Mail } from "lucide-react";
 import Socials from "./Socials";
 import {
   buttonBase,
