@@ -133,7 +133,12 @@ export const enMessages: PortfolioMessages = {
       status: "Private product",
       image: "/projects/insta-shop.webp",
       imageAlt: "Insta-shop marketplace and storefront concept artwork",
-      links: [],
+      links: [
+        {
+          label: "Website",
+          href: "https://insta-shop.ir/",
+        },
+      ],
     },
     {
       id: "hashtag-network",
@@ -153,7 +158,12 @@ export const enMessages: PortfolioMessages = {
       image: "/projects/hashtag-network.jpg",
       imageAlt:
         "Hashtag Network installation map with participant nodes around a factory",
-      links: [],
+      links: [
+        {
+          href: "/ArtFactory.pdf#page=83",
+          label: "Catalog",
+        },
+      ],
     },
     {
       id: "javascript-runtime",
