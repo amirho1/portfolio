@@ -51,7 +51,7 @@ export const enMessages: PortfolioMessages = {
       "I am currently focused on AI-assisted products, real-time interfaces, developer tooling, and systems that make complex work feel straightforward.",
     additionalBiography:
       "I enjoy learning systems deeply, sharing what I learn, and moving comfortably between interface details and the architecture that supports them.",
-    resumeHref: "/AmirhosseinSalighedarResume.pdf",
+    resumeHref: "/AmirHosseinSalighedarResume.pdf",
     avatarAlt: "Amir Hossein Salighedar, software engineer",
   },
   stations: [

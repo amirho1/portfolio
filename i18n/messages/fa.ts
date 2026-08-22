@@ -52,7 +52,7 @@ export const faMessages: PortfolioMessages = {
       "تمرکز فعلی من بر محصولات مبتنی بر هوش مصنوعی، رابط‌های بلادرنگ، ابزارهای توسعه‌دهندگان و سیستم‌هایی است که کارهای پیچیده را ساده و قابل‌فهم می‌کنند.",
     additionalBiography:
       "از یادگیری عمیق سیستم‌ها و به‌اشتراک‌گذاشتن آموخته‌ها لذت می‌برم و به‌راحتی میان جزئیات رابط کاربری و معماری پشتیبان آن حرکت می‌کنم.",
-    resumeHref: "/AmirhosseinSalighedarResume.pdf",
+    resumeHref: "/AmirHosseinSalighedarResume.pdf",
     avatarAlt: "امیرحسین سلیقه دار، مهندس نرم‌افزار",
   },
   stations: [
