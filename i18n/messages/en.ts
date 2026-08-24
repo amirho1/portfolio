@@ -278,7 +278,7 @@ export const enMessages: PortfolioMessages = {
       ],
     },
     {
-      company: "Ariana Labs · vendor at Irancell",
+      company: "Ariana Labs · vendor at MTN Irancell",
       role: "Frontend Developer",
       period: "May 2023 – Mar 2025",
       highlights: [
@@ -288,11 +288,11 @@ export const enMessages: PortfolioMessages = {
       ],
     },
     {
-      company: "Comviva & Saie Group · vendor at Irancell",
+      company: "Comviva & Saie Group · vendor at MTN Irancell",
       role: "Web Developer",
       period: "Jun 2022 – Apr 2023",
       highlights: [
-        "Developed and maintained the legacy MyIrancell web application.",
+        "Developed MyIrancell web application.",
         "Collaborated across teams to integrate changes with existing systems.",
         "Supported the stability and continued evolution of a customer-facing product.",
       ],
