@@ -1,34 +1,63 @@
+import { siteUrl } from "@/i18n/config";
+import { getMessages } from "@/i18n/messages";
 import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
 /**
- * Return canonical localized URLs and alternate-language relationships.
- * @returns The localized sitemap entries.
+ * Return canonical localized URLs, alternate-language relationships, and static resume routes for the sitemap.
+ * @returns The sitemap entries.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
+  const enResumeUrl = `${siteUrl}${getMessages("en").profile.resumeHref}`;
+  const faResumeUrl = `${siteUrl}${getMessages("fa").profile.resumeHref}`;
+
   return [
     {
-      url: "https://amirho.com",
+      url: siteUrl,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
       alternates: {
         languages: {
-          en: "https://amirho.com",
-          fa: "https://amirho.com/fa",
+          en: siteUrl,
+          fa: `${siteUrl}/fa`,
         },
       },
     },
     {
-      url: "https://amirho.com/fa",
+      url: `${siteUrl}/fa`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
       alternates: {
         languages: {
-          en: "https://amirho.com",
-          fa: "https://amirho.com/fa",
+          en: siteUrl,
+          fa: `${siteUrl}/fa`,
+        },
+      },
+    },
+    {
+      url: enResumeUrl,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: enResumeUrl,
+          fa: faResumeUrl,
+        },
+      },
+    },
+    {
+      url: faResumeUrl,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: enResumeUrl,
+          fa: faResumeUrl,
         },
       },
     },
